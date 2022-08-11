@@ -28,7 +28,7 @@ typeSearchBTN.addEventListener(("click"),pokemonFetchType)
 textName.addEventListener("input",pokemonFetchName)
 textType.addEventListener("input",pokemonFetchType)
 
-function pokemonFetchName(){
+function pokemonFetchName (){
     checker = "name"
     URLFetch()
 }
@@ -53,13 +53,13 @@ function pokemonFetch(result){
     })
 }
 function cardCreator(result){
-    if(checker == "name" && result["name"].match(textName.value)){
+    if(checker == "name" && result["name"].match(textName.value.toLowerCase())){
         cardInit(result)
     }
-    else if(checker == "type" && result["types"][0]["type"]["name"].match(textType.value)){
+    else if(checker == "type" && result["types"][0]["type"]["name"].match(textName.value.toLowerCase())){
         cardInit(result)
     }
-    else if(result["name"].match(textName.value) && result["types"][0]["type"]["name"].match(textType.value)){
+    else if(result["name"].match(textName.value) && result["types"][0]["type"]["name"].match(textName.value.toLowerCase())){
         cardInit(result)
     }
 }
