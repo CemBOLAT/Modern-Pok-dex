@@ -36,21 +36,24 @@ function pokemonFetchType(){
     checker = "type"
     URLFetch()
 }
-function URLFetch(){
-    let URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151"
-    fetch(URL)
-    .then(response => response.json())
-    .then(pokemonFetch)
+async function URLFetch(){
+    let response = await fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=151")
+    let json = await response.json()
+    pokemonFetch(json)
 }
 function pokemonFetch(result){
+    console.log(result)
     cardContainer.innerHTML = ``
 
     let resultArr = result["results"]
     resultArr.forEach((pokeInfo)=>{
-        fetch(pokeInfo.url)
-        .then(response => response.json())
-        .then(cardCreator)
+        fetchEachResult(pokeInfo)
     })
+}
+async function fetchEachResult(pokeInfo){
+    let response = await fetch(pokeInfo.url)
+    let json = await response.json()
+    cardCreator(json)
 }
 function cardCreator(result){
     if(checker == "name" && result["name"].match(textName.value.toLowerCase())){
