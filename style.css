@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+:root{
+    font-family: 'Roboto Slab', serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#page-container{
+    min-height: 100vh;
+    background: linear-gradient(270deg,rgb(28, 27, 90),rgb(66, 50, 50));
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#title-container{
+    font-size: 50px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    color: white;
+}
+#form{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+.textLabel{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    box-shadow: 0px 0px 10px 2px white;
+}
+.textName,.textType{
+    border: none;
+    height: 30px;
+    background-color: rgb(255, 251, 1);
+    width: 250px;
+    padding: 0px 10px;
+}
+.textName:focus,.textType:focus{
+    outline: none;
+}
+.typeSearch,.nameSearch{
+    background-color: rgb(255, 251, 1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 500ms ease;
+}
+.typeSearch:hover,.nameSearch:hover{
+    background-color: rgb(255, 151, 1);
+}
+.typeSearch ion-icon,.nameSearch ion-icon{
+    height: 90%;
+    width: 90%;
+}
+#card-container{
+    width: 100%;
+    max-width: 1340px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 20px 20px;
+}
+.card{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 3px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
+}
+.card-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 50%;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-title{
+    font-size: 25px;
+    font-weight: 1000;
+}
+@media screen and (max-width: 620px) {
+    #title-container{
+        font-size: 20px;
+    }
+
+    #form{
+        width: 100%;
+        padding: 5px;
+        gap: 20px;
+    }
+    .textLabel{
+        height: 30px;
+        width: 140px;
+    }
+    .textName,.textType{
+        height: 30px;
+        width: 120px;
+        padding: 0px 4px;
+        font-size: 10px;
+    }
+    .typeSearch,.nameSearch{
+        width: 30px;
+    }
+    #page-container{
+        padding: 5px;
+    }
+}
