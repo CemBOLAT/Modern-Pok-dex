@@ -1,5 +1,8 @@
 # Modern-Pokédex
 Modern-Pokédex that includes first generation POKEMONs
+
+# <a href="https://cembolat.github.io/Modern-Pok-dex/">Live Page</a>
+
 # Api that I used
 <li><a href="https://pokeapi.co/">API</a> </li>
 
